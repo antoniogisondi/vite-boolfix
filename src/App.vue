@@ -19,15 +19,25 @@ export default {
   methods: {
     getMovies() {
       let myUrl = store.apiMovies
+      let tvUrl = store.apiTvSeries
 
       if (store.searchMovies != '') {
         myUrl += `&query=${store.searchMovies}`
       }
-      console.log('Emit Funziona')
+
+      if (store.searchMovies != '') {
+        tvUrl += `&query=${store.searchMovies}`
+      }
+
 
       axios.get(myUrl).then((response) => {
         store.movies_array = response.data.results
         console.log(store.movies_array)
+      })
+
+      axios.get(tvUrl).then((response) => {
+        store.tvSeries_array = response.data.results
+        console.log(store.tvSeries_array)
       })
     }
   },
@@ -42,5 +52,5 @@ export default {
 <style lang="scss">
 @use './styles/generals.scss' as *;
 @use './styles/partials/variables';
-@use './styles/partials/mixins'
+@use './styles/partials/mixins';
 </style>

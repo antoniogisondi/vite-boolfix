@@ -1,7 +1,7 @@
 <script>
 export default {
     props: {
-        myMovies: Object
+        myTvSeries: Object
     }
 }
 </script>
@@ -10,17 +10,17 @@ export default {
     <div class="card my-3 rounded-4 card-width">
         <div class="card-content d-flex flex-column align-items-center position-relative">
             <div class="img-container position-absolute">
-                <img :src="myMovies.backdrop_path" alt="">
+                <img :src="myTvSeries.backdrop_path" alt="">
             </div>
             <div class="title text-center">
-                <h4>{{ myMovies.title }}</h4>
-                <p>{{ myMovies.original_title }}</p>
+                <h4>{{ myTvSeries.name }}</h4>
+                <p>{{ myTvSeries.original_name }}</p>
             </div>
             <div class="flag">
-                <img :src="`../../node_modules/country-flag-icons/1x1/${myMovies.original_language.toUpperCase()}.svg`"
+                <img :src="`../../node_modules/country-flag-icons/1x1/${myTvSeries.original_language.toUpperCase()}.svg`"
                     alt="">
             </div>
-            <p>{{ myMovies.vote_average }}</p>
+            <p>{{ myTvSeries.vote_average }}</p>
         </div>
     </div>
 </template>
