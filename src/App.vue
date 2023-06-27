@@ -22,22 +22,20 @@ export default {
       let tvUrl = store.apiTvSeries
 
       if (store.searchMovies != '') {
-        myUrl += `&query=${store.searchMovies}`
+        myUrl += `${store.searchMovies}`
       }
 
       if (store.searchMovies != '') {
-        tvUrl += `&query=${store.searchMovies}`
+        tvUrl += `${store.searchMovies}`
       }
 
 
       axios.get(myUrl).then((response) => {
         store.movies_array = response.data.results
-        console.log(store.movies_array)
       })
 
       axios.get(tvUrl).then((response) => {
         store.tvSeries_array = response.data.results
-        console.log(store.tvSeries_array)
       })
     }
   },

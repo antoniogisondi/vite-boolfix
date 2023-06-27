@@ -18,19 +18,13 @@ export default {
 <template>
     <main class="container-fluid">
         <div class="container">
-            <div class="row">
-                <div class="title">
-                    <h1>Films</h1>
-                </div>
+            <div class="row mb-5">
                 <div class="col" v-for="(movies, index) in store.movies_array" :key="index">
                     <AppMoviesCard :myMovies="movies" />
                 </div>
             </div>
 
-            <div class="row">
-                <div class="title">
-                    <h1>TV Series</h1>
-                </div>
+            <div class="row mt-5">
                 <div class="col" v-for="(series, index) in store.tvSeries_array" :key="index">
                     <AppSeriesTvCard :myTvSeries="series" />
                 </div>
