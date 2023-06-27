@@ -45,7 +45,7 @@ export default {
                         <i class="fa-star fa-solid" v-for="(item, index) in starVotes()" :key="index"></i>
                         <i class="fa-regular fa-star" v-for="(item, index) in differenceStarVotes()" :key="index"></i>
                     </div>
-                    <div class="overview overflow-auto mt-4">
+                    <div class="overview overflow-auto mt-2">
                         <p>{{ myTvSeries.overview }}</p>
                     </div>
                 </div>
