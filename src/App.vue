@@ -2,15 +2,15 @@
 import axios from 'axios';
 import { store } from './data/store';
 import AppHeader from './components/AppHeader.vue';
-import AppMoviesList from './components/AppMoviesList.vue';
+import AppMain from './components/AppMain.vue';
 export default {
   components: {
     AppHeader,
-    AppMoviesList,
+    AppMain,
   },
   data() {
     return {
-      store
+      store,
     }
   },
   mounted() {
@@ -23,12 +23,8 @@ export default {
 
       if (store.searchMovies != '') {
         myUrl += `${store.searchMovies}`
-      }
-
-      if (store.searchMovies != '') {
         tvUrl += `${store.searchMovies}`
       }
-
 
       axios.get(myUrl).then((response) => {
         store.movies_array = response.data.results
@@ -44,7 +40,7 @@ export default {
 
 <template lang="">
     <AppHeader @search="getMovies"/>
-    <AppMoviesList/>
+    <AppMain/>
 </template>
 
 <style lang="scss">

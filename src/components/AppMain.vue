@@ -9,9 +9,9 @@ export default {
     },
     data() {
         return {
-            store
+            store,
         }
-    },
+    }
 }
 </script>
 
@@ -19,12 +19,18 @@ export default {
     <main class="container-fluid">
         <div class="container">
             <div class="row mb-5">
+                <div class="title" v-if="store.movies_array.length > 0">
+                    <h2>FILMS</h2>
+                </div>
                 <div class="col" v-for="(movies, index) in store.movies_array" :key="index">
                     <AppMoviesCard :myMovies="movies" />
                 </div>
             </div>
 
             <div class="row mt-5">
+                <div class="title" v-if="store.movies_array.length > 0">
+                    <h2>TV SERIES</h2>
+                </div>
                 <div class="col" v-for="(series, index) in store.tvSeries_array" :key="index">
                     <AppSeriesTvCard :myTvSeries="series" />
                 </div>

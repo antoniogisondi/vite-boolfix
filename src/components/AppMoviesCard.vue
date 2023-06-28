@@ -11,7 +11,6 @@ export default {
         voteStar() {
             let vote_round = this.myMovies.vote_average
             let votes = Math.round(vote_round / 2)
-            console.log(votes)
             return votes
         },
         differenceStarVotes() {

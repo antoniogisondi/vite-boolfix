@@ -11,7 +11,6 @@ export default {
         starVotes() {
             let vote_round = this.myTvSeries.vote_average
             let votes = Math.round(vote_round / 2)
-            console.log(votes)
             return votes
         },
         differenceStarVotes() {
