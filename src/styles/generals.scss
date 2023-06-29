@@ -24,8 +24,19 @@ header {
     padding: 20px;
 }
 
+.nav-item {
+    .nav-link {
+        color: white;
+        font-size: 20px;
+    }
+}
+
 main {
     margin-top: 100px;
+}
+
+.text-white {
+    color: white;
 }
 
 .card-width {
